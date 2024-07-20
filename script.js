@@ -111,7 +111,7 @@ let value1 = Number(score1.innerHTML)
    var win1= value0 + player1Current
     score0.innerHTML= win1
     
-    if (win1>= 10){
+    if (win1 >= 100){
         console.log("player 1 wins")
         player0.classList.add("player--winner")
     }
@@ -129,7 +129,7 @@ let value1 = Number(score1.innerHTML)
         var win2 = value1 + player2Current
 
         //declaring player 2 as winner
-        if(win2 >=10){
+        if(win2 >= 100){
             console.log("player 2 wins")
             player1.classList.add("player--winner")
         }
