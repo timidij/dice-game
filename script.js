@@ -114,6 +114,8 @@ let value1 = Number(score1.innerHTML)
     if (win1 >= 100){
         console.log("player 1 wins")
         player0.classList.add("player--winner")
+        roll.disabled= true
+        hold.disabled= true
     }
     cool=1
     player1Current=0
@@ -132,6 +134,8 @@ let value1 = Number(score1.innerHTML)
         if(win2 >= 100){
             console.log("player 2 wins")
             player1.classList.add("player--winner")
+            roll.disabled= true
+            hold.disabled= true
         }
         player1Current=0
         player2Current =0
@@ -163,7 +167,8 @@ player1.classList.remove("player--winner")
 cool = 1
 currentReset()
 changeOver()
-
+roll.disabled= false
+hold.disabled= false
 }
 
 reset.addEventListener("click", restart)
