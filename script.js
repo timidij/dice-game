@@ -1,15 +1,15 @@
+'use strict';
 const dice = document.querySelector(".dice")
 
-
-
-
-
-
 // dice roll
+document.addEventListener("DOMContentLoaded", (event) => {
+    dice.style.display= "none"
+  });
 
 const diceRole = ()=>{
+    dice.style.display= "block"
     let number = Math.trunc(Math.random()*6)+1
-    // console.log(number)
+    
     if(number === 6){
 dice.src = "./image/dice-6.png"
 return number;
@@ -116,10 +116,11 @@ let value1 = Number(score1.innerHTML)
         player0.classList.add("player--winner")
         roll.disabled= true
         hold.disabled= true
+        dice.style.display= "none"
+        current0.innerHTML= player1Current
     }
     cool=1
-    player1Current=0
-    player2Current =0
+   
     count=0
     currentReset()
     }
@@ -132,10 +133,13 @@ let value1 = Number(score1.innerHTML)
 
         //declaring player 2 as winner
         if(win2 >= 100){
-            console.log("player 2 wins")
+            
             player1.classList.add("player--winner")
-            roll.disabled= true
-            hold.disabled= true
+            roll.disabled= true;
+            hold.disabled= true;
+            current1.innerHTML = player2Current
+            dice.style.display= "none"
+
         }
         player1Current=0
         player2Current =0
@@ -169,6 +173,7 @@ currentReset()
 changeOver()
 roll.disabled= false
 hold.disabled= false
+dice.style.display= "none"
 }
 
 reset.addEventListener("click", restart)
